@@ -82,10 +82,18 @@ pycharm中可以对文件夹进行mark，mark有4个选项。
 在Django项目初始化之后还应该建立以下文件夹
 
 - apps  
-  每个功能最好单独分出来成为一个app，存放在apps中。这样做有利于项目有对于整个项目中功能的理解，对以后的修改也是有好处的。
+  每个功能最好单独分出来成为一个app，存放在apps中。这样做有利于项目有对于整个项目中功能的理解，对以后的修改也是有好处的。但是要在 settings 中添加路径，代码如下：
+  ```
+  import sys
+  sys.path.insert(0, os.path.join(BASE_DIR, 'apps'))
+  ```
 
 - extra_apps  
-  有时候需要用到一些插件，但是pip库里没有。或者想要使用最新的功能pip库没有更新这样情况下就需要安装源码来使用，如果插件超过一个，最好单独放在一个文件夹下。
+  有时候需要用到一些插件，但是pip库里没有。或者想要使用最新的功能pip库没有更新这样情况下就需要安装源码来使用，如果插件超过一个，最好单独放在一个文件夹下。同样要在 settings 中添加路径，代码如下：
+  ```
+  import sys
+  sys.path.insert(0, os.path.join(BASE_DIR, 'extra_apps'))
+  ```
 
 - static  
   存放css、js、图片等静态文件
