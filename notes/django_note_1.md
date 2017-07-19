@@ -11,11 +11,21 @@
 使用命令 ```conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/``` 修改成清华大学的源。  
 使用命令 ```conda config --set show_channel_urls yes``` 在下载过程中显示下载地址，也就是我们修改的源。
 
+- 修改pip源  
+在 ```C:\Users\Administrator\``` 下创建 pip 文件夹，在pip创建pip.ini文件，然后写入：  
+    ```
+    [global]
+    index-url = https://pypi.tuna.tsinghua.edu.cn/simple
+    ```
+
 - 使用Anaconda创建虚拟环境  
 虚拟环境的墓地是为了区分不同的工作环境特别是py2和py3的环境。使用命令 ```conda create -n your_name python=2.*``` 创建py2的环境，需要py3的环境就把 2.\* 换成 3.\* 就好了。虚拟环境之间是互不干扰的。
 
 - 进入虚拟环境  
 使用命令 ```activate your_name```
+
+- 安装Django  
+使用命令 ```pip install django==1.9.8``` 这里使用的版本是1.9.8, conda 库中没有
 
 - 退出虚拟环境   
 使用命令 ```deactivate your_name```
@@ -23,15 +33,11 @@
 - Anaconda安装库  
 使用命令 ```conda install your_name``` 使用Anaconda安装库要比pip安装的依赖检查的严格，但有些库pip中有Anaconda中没有的时候，就要使用pip来安装。
 
-- 更换pip源  
-在 ```C:\Users\Administrator\``` 下创建 pip 文件夹，在pip创建pip.ini文件，然后写入：
-```
-[global]
-index-url = https://pypi.tuna.tsinghua.edu.cn/simple
-```
-
 - pip安装库  
 使用命令 ```pip install your_name```
+
+### 创建项目
+使用Pycharm中的Django模版，设置项目所在路径，设置项目虚拟环境路径(选择虚拟环境中的 python.exe)，点击 OK。
 
 ### 项目文件目录介绍
 
@@ -46,7 +52,7 @@ index-url = https://pypi.tuna.tsinghua.edu.cn/simple
 - manage.py  
   Django启动文件，还不太了解
 
-- \__init__.py
+- init.py
   还不太了解
 
 - wsgi.py  
