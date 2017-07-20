@@ -4,7 +4,7 @@
 ### 环境搭建
 1. 去[python官网](https://www.python.org/)下载python，最好两个版本都下载。
 2. 去[Pycharm官网](https://www.jetbrains.com/)下载Pycharm的专业版，开发必须用专业版，有些必须要用到的功能社区版没有。
-3. 去[Anaconda官网](https://www.continuum.io/)下载适合的版本。下载Anaconda出于两个理由：要在同一台计算机上同时存在两个python版本。解决库的依赖关系。(win下安装时要选择添加PATH)
+3. 去[Anaconda官网](https://www.continuum.io/)下载适合的版本。下载Anaconda出于两个理由：要在同一台计算机上同时存在两个python版本。解决 __科学计算库__ 的依赖关系。(win下安装时要选择添加PATH)
 
 ##### 开始前的准备工作：
 - 修改Anaconda下载源  
@@ -31,7 +31,7 @@
 使用命令 ```deactivate your_name```
 
 - Anaconda安装库  
-使用命令 ```conda install your_name``` 使用Anaconda安装库要比pip安装的依赖检查的严格，但有些库pip中有Anaconda中没有的时候，就要使用pip来安装。
+使用命令 ```conda install your_name``` 使用Anaconda安装库要比pip安装的依赖检查的严格，__但有些库pip中有，Anaconda中没有的时候，就要使用pip来安装。__
 
 - pip安装库  
 使用命令 ```pip install your_name```
