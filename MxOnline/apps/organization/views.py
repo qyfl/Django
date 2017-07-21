@@ -11,7 +11,7 @@ from operation.models import UserFavorite
 from courses.models import Course
 
 
-# 课程机构的的
+# 课程机构
 class OrgView(View):
     def get(self, request):
         # 课程机构
@@ -183,5 +183,3 @@ class AddFavView(View):
                 return HttpResponse('{"status":"success","msg":"已收藏"}', content_type='application/json')
             else:
                 return HttpResponse('{"status":"fail","msg":"收藏出错"}', content_type='application/json')
-            
-            

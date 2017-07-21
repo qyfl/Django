@@ -6,6 +6,7 @@ from datetime import datetime
 from django.db import models
 
 
+# 城市
 class CityDict(models.Model):
     name = models.CharField(max_length=20, verbose_name=u'城市名')
     desc = models.CharField(max_length=200, verbose_name=u'描述')
@@ -19,6 +20,7 @@ class CityDict(models.Model):
         return self.name
 
 
+# 课程机构
 class CourseOrg(models.Model):
     name = models.CharField(max_length=50, verbose_name=u'机构名称')
     desc = models.TextField(verbose_name=u'机构描述')
@@ -37,10 +39,15 @@ class CourseOrg(models.Model):
         verbose_name = u'课程机构'
         verbose_name_plural = verbose_name
         
+    # 课程机构的教师数量
+    def get_teacher_nums(self):
+        return self.teacher_set.all().count()
+    
     def __unicode__(self):
         return self.name
 
 
+# 教师
 class Teacher(models.Model):
     org = models.ForeignKey(CourseOrg, verbose_name=u'所属机构')
     name = models.CharField(max_length=50, verbose_name=u'教师名')
