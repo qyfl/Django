@@ -21,13 +21,19 @@ class UserProfile(AbstractUser):
     
     def __unciode__(self):
         return self.username
-
-
+    
+    # 未读消息数量
+    def unread_nums(self):
+        # 调用import 不然就循环了
+        from operation.models import UserMessage
+        return UserMessage.objects.filter(user=self.id, has_read=False).count()
+        
+        
 class EmailVerifyRecord(models.Model):
     code = models.CharField(max_length=20, verbose_name=u'验证码')
     email = models.EmailField(max_length=50, verbose_name=u'邮箱')
-    send_type = models.CharField(verbose_name=u'验证码类型', choices=(('register', u'注册'), ('forget', u'找回密码')),
-                                 max_length=10)
+    send_type = models.CharField(verbose_name=u'验证码类型', choices=(('register', u'注册'), ('forget', u'找回密码'), ('update_email', u'修改邮箱')),
+                                 max_length=20)
     send_time = models.DateTimeField(verbose_name=u'发送时间', default=datetime.now)
     
     class Meta:

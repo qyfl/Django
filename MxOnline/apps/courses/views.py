@@ -10,6 +10,7 @@ from .models import Course, CourseResource
 from operation.models import UserFavorite, CourseComments, UserCourse
 from utils.mixin_utils import LoginRequiredMixin
 
+
 # 课程列表页
 class CourseListView(View):
     def get(self, request):
@@ -86,6 +87,8 @@ class CourseDetailView(View):
 class CourseInfoView(LoginRequiredMixin, View):
     def get(self, request, course_id):
         course = Course.objects.get(id=int(course_id))
+        course.student += 1
+        course.save()
         
         # 查询用户是否关联了该课程
         user_courses = UserCourse.objects.filter(user=request.user, course=course)
@@ -145,4 +148,3 @@ class AddCommentView(View):
             return HttpResponse('{"status":"success","msg":"添加成功"}', content_type='application/json')
         else:
             return HttpResponse('{"status":"fail","msg":"添加出错"}', content_type='application/json')
-            
