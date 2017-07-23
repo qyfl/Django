@@ -8,12 +8,17 @@ import xadmin
 from .models import Course, Lesson, Video, CourseResource
 
 
+class LessonInline(object):
+    model = Lesson
+    extra = 0
+
 class CourseAdmin(object):
     list_dispaly = ['name', 'desc', 'detail', 'degree', 'learn_times', 'student', 'fav_nums', 'image', 'click_nums',
                     'add_time']
     search_fields = ['name', 'desc', 'detail', 'degree', 'learn_times', 'student', 'fav_nums', 'image', 'click_nums']
     list_filter = ['name', 'desc', 'detail', 'degree', 'learn_times', 'student', 'fav_nums', 'image', 'click_nums',
                    'add_time']
+    inlines = [LessonInline]
 
 
 class LessonAdmin(object):

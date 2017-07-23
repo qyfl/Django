@@ -46,4 +46,12 @@ urlpatterns = [
     
     # 用户相关 url
     url(r'^users/', include('users.urls', namespace='users')),
+    
+    # url(r'^static/(?P<path>.*)$', serve, {'document_root':STATIC_ROOT}),
 ]
+
+# 404
+handler404 = 'users.views.page_not_found'
+
+# 500
+handler500 = 'users.views.page_error'

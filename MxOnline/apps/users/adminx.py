@@ -5,6 +5,7 @@ __date__ = "2017/7/16 13:42"
 
 import xadmin
 from xadmin import views
+from xadmin.plugins.auth import UserAdmin
 
 from .models import EmailVerifyRecord, Banner
 

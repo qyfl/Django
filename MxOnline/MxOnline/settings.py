@@ -27,7 +27,7 @@ SECRET_KEY = 'm8c&th4lre=+$ok_#bgh62wtu)0e2a_v5af!ztgsw@oh4hpi$p'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 AUTHENTICATION_BACKENDS = (
     'users.views.CustomBackend',
@@ -152,3 +152,5 @@ EMAIL_FROM = 'qingyunfengli@sina.com'
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+# STATIC_ROOT = os.path.join(BASE_DIR, 'static')
