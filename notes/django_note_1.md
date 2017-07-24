@@ -1,4 +1,4 @@
-## Django笔记(一)
+## Django note 1
 
 ---
 ### 环境搭建
