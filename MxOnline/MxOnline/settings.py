@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 """
 Django settings for MxOnline project.
 
@@ -146,7 +147,7 @@ STATICFILES_DIRS = (
 EMAIL_HOST = 'smtp.sina.com'
 EMAIL_PORT = 25
 EMAIL_HOST_USER = 'qingyunfengli@sina.com'
-EMAIL_HOST_PASSWORD = 'zhangdaosheng'
+EMAIL_HOST_PASSWORD = '差点把密码暴露了'
 EMAIL_USE_TLS = False
 EMAIL_FROM = 'qingyunfengli@sina.com'
 
